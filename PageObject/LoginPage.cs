@@ -21,10 +21,12 @@ namespace TallerAutomatización.PageObject
         public IWebElement btnLogin => _driver.FindElement(_btnLogin);
 
         //funcion para ingresar credenciales correctamente
-        public void IngresarCredenciales() {
-            username.SendKeys("tomsmith");
-            password.SendKeys("SuperSecretPassword!");
+        public void IngresarCredenciales(string user, string pass) {
+            Thread.Sleep(1000);
+            username.SendKeys(user);
+            password.SendKeys(pass);
             btnLogin.Click();
+            Thread.Sleep(1000);
         }
 
     }
